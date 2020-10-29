@@ -1,0 +1,37 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background: #a4edf7;
+	font-family: 'Montserrat', sans-serif;
+	padding-left: 4em;
+	letter-spacing: .05em;
+	color: #0e1f2f;
+}
+
+h1 {
+	font-size: 5em;
+	font-weight: 500;
+}
+
+h2,
+h3 {
+	font-size: 2.5em;
+	font-weight: 300;
+	margin-top: -1.3em;
+	border-bottom: #0e1f2f solid 1px;
+}
+
+h3 {
+	margin-top: 0;
+}
+
+li {
+	height: 300 px;
+}
+
+form {
+	height: 100px;
+}
