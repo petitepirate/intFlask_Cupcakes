@@ -11,6 +11,9 @@ app.config['SQLALCHEMY_ECHO'] = True
 
 connect_db(app)
 
+@app.route('/')
+def show_home():
+    return render_template('index.html')
 
 @app.route('/api/cupcakes')
 def list_cupcakes():
@@ -53,6 +56,4 @@ def delete_cupcake(cupcake_id):
         db.session.commit()
         return jsonify(message="deleted")
 
-@app.route('/')
-def show_home():
-    return render_template('index.html')
+

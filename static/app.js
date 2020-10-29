@@ -1,7 +1,7 @@
 const BASE_URL = "http://127.0.0.1:5000/api";
 const UL = document.querySelector('UL');
-const submit = document.querySelector('form')
-
+const submit = document.querySelector('form');
+const delbtn = document.querySelector('.del-btn');
 class Cupcake {
     constructor(baseUrl, ul) {
         this.baseUrl = baseUrl
@@ -14,7 +14,7 @@ class Cupcake {
         li.innerHTML = `<img class="Cupcake-img"
 		src="${cupcake.image}" height=200>
         ${cupcake.flavor} / ${cupcake.size} / ${cupcake.rating}
-        <button class="del-btn">X</button>`
+        <button class="del-btn">X</button>`  //probably will need to do the delete button differently
         return li;
     }
 
@@ -58,3 +58,10 @@ const cupcake = new Cupcake(BASE_URL, UL);
 cupcake.showCupcakes();
 
 submit.addEventListener('submit', function (e) { cupcake.formHandler(e); });
+
+
+//started but not finished.  returning null at the moment
+delbtn.addEventListener('click', function() {
+    print('you clicked');
+})
+
