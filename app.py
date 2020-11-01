@@ -8,12 +8,12 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql:///cupcakes'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SQLALCHEMY_ECHO'] = True
 
-
 connect_db(app)
 
 @app.route('/')
 def show_home():
-    return render_template('index.html')
+    cupcakes = Cupcake.query.all()
+    return render_template('index.html', cupcakes=cupcakes)
 
 @app.route('/api/cupcakes')
 def list_cupcakes():
@@ -30,7 +30,7 @@ def add_cupcake():
     new_cupcake = Cupcake(flavor = request.json['flavor'],
                             size = request.json['size'],
                             rating = request.json['rating'],
-                            image = request.json['image'])
+                            image = request.json['image'] or None)
     db.session.add(new_cupcake)
     db.session.commit()
     response_json = jsonify(cupcake=new_cupcake.serialized())
@@ -55,5 +55,3 @@ def delete_cupcake(cupcake_id):
         db.session.delete(cupcake)
         db.session.commit()
         return jsonify(message="deleted")
-
-

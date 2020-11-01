@@ -5,28 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cupcake API</title>
     <link rel="stylesheet" href="/static/style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap"  rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h1>Cupcake API</h1>
+    <h1>Cuppycake Cupcakes</h1>
     <h2>Available Cupcakes:</h2>
-    <ul></ul>
+    <div id="cupcakesdiv">
+      {% for cupcake in cupcakes %}
+      <div id="single"><img class="Cupcake-img"
+           src="{{cupcake.image}}" height=200><br>
+           Flavor: {{cupcake.flavor}} <br>Size: {{cupcake.size}} <br>Rating:{{cupcake.rating}}<br><button
+          class="remove"
+          data-id="{{cupcake.id}}">Remove</button></div>
+      {% endfor %}  
+    </div>  
+    <div id="cupcakeform">
     <h3>Add Cupcake</h2>
-    <form>
+    <form onsubmit="setTimeout(function(){window.location.reload();},10);">
         <label for="flavor">Flavor:</label>
-        <input type="text" name="flavor" id="flavor" >
+        <input type="text" name="flavor" id="flavor" ><br><br>
         <label for="size">Size:</label>
-        <input type="text" name="size"id="size" >
+        <input type="text" name="size"id="size" ><br><br>
         <label for="rating">Rating:</label>
-        <input type="number" name="rating" id="rating">
+        <input type="number" name="rating" id="rating"><br><br>
         <label for="image_url">Image Url:</label>
-        <input type="url" name="image_url" id="image_url">
+        <input type="url" name="image_url" id="image_url"><br><br>
         <button type="submit" id="submit">SUBMIT</button>
     </form>
+  </div>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
     <script src="/static/app.js"></script>
   </body>
 </html>

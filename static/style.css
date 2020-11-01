@@ -5,33 +5,55 @@ body {
 }
 body {
 	background: #a4edf7;
-	font-family: 'Montserrat', sans-serif;
 	padding-left: 4em;
 	letter-spacing: .05em;
 	color: #0e1f2f;
 }
 
 h1 {
-	font-size: 5em;
+	font-size: 4em;
 	font-weight: 500;
+	text-align: center;
+	margin-top: 1.3em;
+	font-family: 'Dancing Script', cursive;
 }
 
 h2,
 h3 {
-	font-size: 2.5em;
+	font-size: 2.25em;
 	font-weight: 300;
-	margin-top: -1.3em;
+	margin-top: 1.3em;
+	font-family: 'Amatic SC', cursive;
 	border-bottom: #0e1f2f solid 1px;
 }
 
 h3 {
-	margin-top: 0;
+	margin-top: 10px;
 }
 
 li {
 	height: 300 px;
 }
 
-form {
-	height: 100px;
+p {
+	font-family: 'Montserrat', sans-serif;
+}
+
+#cupcakediv {
+	display: block;
+	position: static;
+	width: 95vw;
+	height: auto;
+}
+
+#single {
+	display: inline-block;
+	height: 300px;
+	margin-left: 10px;
+	width: 20%;
+	text-align: center;
+}
+
+#cupcakeform {
+	display: block;
 }
