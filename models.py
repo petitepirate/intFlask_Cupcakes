@@ -23,6 +23,7 @@ class Cupcake(db.Model):
                         default = DEFAULT_IMG)
 
     def serialized(self):
+        """ Serializes a cupcake into a dictionary"""
         return {
             "id": self.id,
             "flavor": self.flavor,

@@ -8,7 +8,6 @@ class Cupcake {
         this.ul = ul
     }
 
-
     async addCupcake(flavor, size, rating, image) {
         const response = await axios.post(`${this.baseUrl}/cupcakes`, {
             flavor: flavor,
@@ -19,8 +18,7 @@ class Cupcake {
         console.log(response)
     }
 
-    formHandler(e) {
-        // e.preventDefault();
+    formHandler() {
         const flavor = document.getElementById("flavor").value;
         const size = document.getElementById("size").value;
         const rating = document.getElementById("rating").value;
